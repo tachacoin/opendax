@@ -11,19 +11,19 @@ x-daemon: &peatio-daemon
 services:
   withdraw_audit:
     << : *peatio-daemon
-    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/daemons.rb withdraw_audit"
+    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/withdraw_audit.rb"
 
   blockchain:
     << : *peatio-daemon
-    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/daemons.rb blockchain"
+    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/blockchain.rb"
 
   global_state:
     << : *peatio-daemon
-    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/daemons.rb global_state"
+    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/global_state.rb"
 
   k:
     << : *peatio-daemon
-    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/daemons.rb k"
+    command: bash -c "bin/link_config && bundle exec ruby lib/daemons/k.rb"
 
   slave_book:
     << : *peatio-daemon
